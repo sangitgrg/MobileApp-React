@@ -6,16 +6,16 @@ export default function App() {
   let x = 1;
   console.log('App running')
   return (
-    <View style={styles.container}>
-      <Button title='Click Me'
-         onPress={() => Alert.alert('My title', 'Button clicked', [
-          { onPress: () => console.log('Yes'), text: "Yes" },
-          { onPress: () => console.log('No'), text: 'No' }
-        ])} />
-    </View>
+    // <View style={styles.container}>
+    //   <Button title='Click Me'
+    //      onPress={() => Alert.alert('My title', 'Button clicked', [
+    //       { onPress: () => console.log('Yes'), text: "Yes" },
+    //       { onPress: () => console.log('No'), text: 'No' }
+    //     ])} />
+    // </View>
 
     // Image and Touch
-    // <SafeAreaView style={styles.container}>
+    // <SafeAreaView>
     //   <Text>Open up App.js to start working on your app!</Text>
     //   <TouchableNativeFeedback onPress={()=>console.log('image pressed.')}>
     //     <Image style={styles.imgCenter}

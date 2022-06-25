@@ -1,43 +1,28 @@
 // import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View} from 'react-native';
+import {
+  StyleSheet, Text, View, SafeAreaView, Image, Platform, StatusBar ,ImageBackground
+} from 'react-native';
+import ViewImageScreen from './app/screens/ViewImageScreen';
+import WelcomeScreen from './app/screens/WelcomeScreen';
 
 export default function App() {
-    // console.log(useDimensions())
-    // console.log(useDeviceOrientation())
-    return (
-        <View style={styles.container}>
-            <View style={{
-                backgroundColor:'grey',
-                width:100,
-                height:100
-            }}/>
-            <View style={{
-                backgroundColor:'gold',
-                width:100,
-                height:100,
-                bottom:30,
-                right:40
-            }}/>
-            <View style={{
-                backgroundColor:'tomato',
-                width:100,
-                height:100 
-            }}/>
-            
-        </View>
-    );
+  console.log('App running')
+  return (
+    <ViewImageScreen />
+
+  );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexDirection:'row',
-        backgroundColor: 'dodgerblue',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    imgCenter: {
-        width: 200,
-        height: 200,
-    }
+  container: {
+    flex: 1,
+    width:600,
+    height:600
+  },
+  image: {
+    flex: 1
+  },
+  placeHolder: {
+    
+  }
 });
