@@ -2,24 +2,34 @@
 import {
     StyleSheet, Text, View, SafeAreaView, Image, Platform, StatusBar, ImageBackground
 } from 'react-native';
+import AppButton from '../components/AppButton';
 
 export default function WelcomeScreen() {
     console.log('App running')
     return (
         <View style={styles.container}>
-            <ImageBackground style={styles.image} source={require('../assets/background.jpg')} resizeMode='cover' >
+            <ImageBackground style={styles.backGround} source={require('../assets/background.jpg')}
+                resizeMode='cover' blurRadius={4} >
                 <View style={styles.logoContainer}>
                     <Image style={styles.logo} source={require('../assets/logo-red.png')} />
-                    <Text>Sell unwanted stuffs</Text>
+                    <Text style={styles.text}>Sell What You Don't need</Text>
                 </View>
-                <View style={styles.loginButton}></View>
-                <View style={styles.registerButton}></View>
+                <View style={styles.buttonContainer}>
+                    <AppButton title="Login" color='primary' />
+                    <AppButton title="Register" color='secondary' />
+                </View>
+                {/* <View style={styles.loginButton}></View>
+                <View style={styles.registerButton}></View> */}
             </ImageBackground>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+    buttonContainer: {
+        width: '100%',
+        padding: 15
+    },
     container: {
         flex: 1,
         paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
@@ -30,22 +40,17 @@ const styles = StyleSheet.create({
     },
     logoContainer: {
         position: 'absolute',
-        top: 200,
-        alignItems:'center'
+        top: 100,
+        alignItems: 'center'
     },
-    image: {
+    backGround: {
         flex: 1,
         justifyContent: 'flex-end',
         alignItems: 'center'
     },
-    loginButton: {
-        width: '100%',
-        height: 70,
-        backgroundColor: 'orange'
-    },
-    registerButton: {
-        width: '100%',
-        height: 70,
-        backgroundColor: 'green'
+    text: {
+        fontWeight: '600',
+        fontSize: 25,
+        paddingVertical:20
     }
 });
